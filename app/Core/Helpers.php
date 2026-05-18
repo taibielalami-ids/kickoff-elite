@@ -17,12 +17,33 @@ function config(string $key, mixed $default = null): mixed
 
 function route_path(string $path = '/'): string
 {
-    $basePath = rtrim((string) config('app.base_path', ''), '/');
+    $basePath = app_base_path();
     $normalized = '/' . ltrim($path, '/');
     if ($normalized === '//') {
         $normalized = '/';
     }
     return ($basePath === '') ? $normalized : $basePath . $normalized;
+}
+
+function app_base_path(): string
+{
+    $configured = trim((string) config('app.base_path', ''));
+    if ($configured !== '' && strtolower($configured) !== 'auto') {
+        return rtrim('/' . trim($configured, '/'), '/');
+    }
+
+    $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+    $dir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');
+
+    if (str_ends_with($dir, '/public')) {
+        $dir = substr($dir, 0, -7);
+    }
+
+    if ($dir === '' || $dir === '.' || $dir === '/') {
+        return '';
+    }
+
+    return $dir;
 }
 
 function redirect(string $path): never

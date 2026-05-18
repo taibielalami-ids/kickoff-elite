@@ -4,7 +4,7 @@ return [
     'app' => [
         'name' => 'KickOff Elite',
         'url' => 'http://localhost',
-        'base_path' => '/kickoff',
+        'base_path' => 'auto',
         'min_age' => 18,
         'session_name' => 'kickoff_elite_session',
         'mapbox_token' => '',

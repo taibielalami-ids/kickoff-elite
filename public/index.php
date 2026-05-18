@@ -89,7 +89,7 @@ $router->post('/admin/pitches/blocks/add', [AdminPitchController::class, 'addBlo
 $router->post('/admin/pitches/blocks/delete', [AdminPitchController::class, 'deleteBlockedSlot']);
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-$basePath = rtrim((string) config('app.base_path', ''), '/');
+$basePath = app_base_path();
 
 if ($basePath !== '' && str_starts_with($requestUri, $basePath)) {
     $requestUri = substr($requestUri, strlen($basePath));

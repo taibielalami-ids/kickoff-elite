@@ -25,6 +25,9 @@ database/schema.sql
 Start WAMP, then open this link in the browser:
 http://localhost/kickoff/
 
+If the folder name is not kickoff, use the folder name in the URL.
+Example: if the folder is C:\wamp64\www\kickoff-elite-main, open http://localhost/kickoff-elite-main/
+
 ## Default Admin Account
 Username: admin
 Password: Admin12345
@@ -44,7 +47,19 @@ Open config/config.php and check these values:
 
 If your WAMP MySQL has a password, put it in config/config.php.
 
+## If You See Not Found
+Check the folder name inside C:\wamp64\www\.
+The URL must match that folder name.
+
+Correct example:
+Folder: C:\wamp64\www\kickoff
+URL: http://localhost/kickoff/
+
+Wrong example:
+Folder: C:\wamp64\www\kickoff-elite-main
+URL: http://localhost/kickoff/
+
 ## Important
-Do not change app.base_path unless you also change the folder name or URL.
-For the normal setup, the folder name must be kickoff and app.base_path must stay /kickoff.
+The app detects the folder name automatically. Usually you do not need to edit app.base_path.
+
 
