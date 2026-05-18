@@ -1,32 +1,52 @@
-﻿# KickOff Elite (WAMP Setup)
+﻿# KickOff Elite
 
-## 1) Requirements
-- WAMP with Apache and MySQL running
+KickOff Elite is a PHP MVC website for 5v5 football pitch reservations.
+
+## What You Need
+- WAMP installed
+- Apache running
+- MySQL running
 - PHP 8 or newer
 
-## 2) Project Location
-- Put the full project folder inside C:\wamp64\www\kickoff
+## How To Download
+1. Click the green Code button on GitHub.
+2. Click Download ZIP.
+3. Extract the ZIP.
+4. Rename the extracted folder to kickoff.
+5. Put the kickoff folder inside C:\wamp64\www\.
 
-## 3) Open the Site
-- Start WAMP.
-- Open http://localhost/kickoff/
-- The project is already prepared to route requests to the correct public entry file.
+Final folder path must be:
+C:\wamp64\www\kickoff
 
-## 4) Database
-In phpMyAdmin:
-1. Create a database named football_simple.
-2. Import database/schema.sql.
+## Database Setup
+1. Open phpMyAdmin.
+2. Create a database named football_simple.
+3. Import this file:
+database/schema.sql
 
-## 5) Default Admin
-- Username: admin
-- Password: Admin12345
+## Run The Site
+Open this link in the browser:
+http://localhost/kickoff/
 
-## 6) Config Setup
-- Copy config/config.example.php to config/config.php.
-- Put your local database, Mapbox, and SMTP values in config/config.php.
-- Do not upload real passwords or API secrets to GitHub.
+## Default Admin Account
+Username: admin
+Password: Admin12345
 
-## 7) Important Notes
-- Main config file: config/config.php
-- base_path must stay /kickoff for this setup.
-- Login OTP can use email if SMTP is configured.
+## User Account
+You can register a new user from the Register page.
+
+## Login Codes
+Email sending is disabled by default so the project works without Gmail setup.
+When a login or verification code is needed, the site shows a fallback code message on the page.
+
+## If The Database Does Not Connect
+Open config/config.php and check these values:
+- database name: football_simple
+- username: root
+- password: empty by default
+
+If your WAMP MySQL has a password, put it in config/config.php.
+
+## Important
+Do not change app.base_path unless you also change the folder name or URL.
+For the normal setup, the folder name must be kickoff and app.base_path must stay /kickoff.

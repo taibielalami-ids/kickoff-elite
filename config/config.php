@@ -7,7 +7,7 @@ return [
         'base_path' => '/kickoff',
         'min_age' => 18,
         'session_name' => 'kickoff_elite_session',
-        'mapbox_token' => 'PASTE_YOUR_MAPBOX_TOKEN_HERE',
+        'mapbox_token' => '',
     ],
     'database' => [
         'host' => '127.0.0.1',
@@ -18,13 +18,13 @@ return [
         'charset' => 'utf8mb4',
     ],
     'mail' => [
-        'from_address' => 'your-email@gmail.com',
+        'from_address' => 'no-reply@kickoff.local',
         'from_name' => 'KickOff Elite',
         'smtp' => [
-            'host' => 'smtp.gmail.com',
+            'host' => '',
             'port' => 587,
-            'username' => 'your-email@gmail.com',
-            'password' => 'YOUR_GMAIL_APP_PASSWORD',
+            'username' => '',
+            'password' => '',
             'encryption' => 'tls',
             'auth' => true,
         ],
