@@ -1,6 +1,6 @@
 ﻿<?php
 
-return [
+$config = [
     'app' => [
         'name' => 'KickOff Elite',
         'url' => 'http://localhost',
@@ -31,3 +31,12 @@ return [
     ],
 ];
 
+$localConfigFile = __DIR__ . '/config.local.php';
+if (file_exists($localConfigFile)) {
+    $localConfig = require $localConfigFile;
+    if (is_array($localConfig)) {
+        $config = array_replace_recursive($config, $localConfig);
+    }
+}
+
+return $config;

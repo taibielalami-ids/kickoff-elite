@@ -41,24 +41,39 @@ When a login or verification code is needed, the site shows a fallback code mess
 
 
 ## Optional Email And Map Setup
-The project works without email or Mapbox credentials, but some features become better when you add your own credentials locally.
+The project works without email or Mapbox credentials.
 
-Open this file:
-config/config.php
+If you want real email delivery or Mapbox maps, create this local file:
+config/config.local.php
 
-For Mapbox maps and directions, put your Mapbox public token here:
-mapbox_token
+Put only your private local settings there.
+This file is ignored by GitHub, so your credentials stay on your PC.
 
-For real email delivery, fill these SMTP values:
-- from_address
-- host
-- username
-- password
+For Mapbox, add your Mapbox public token under app then mapbox_token.
 
+For real email delivery, add your SMTP settings under mail then smtp.
 For Gmail, use a Gmail App Password, not your normal Gmail password.
 
-Important: do not upload your real email password or API tokens to GitHub.
-Keep them only inside your local config/config.php file.
+Do not put real credentials in GitHub commits.
+
+Example content for config.local.php:
+
+```php
+<?php
+return [
+    'app' => [
+        'mapbox_token' => 'your_mapbox_token_here',
+    ],
+    'mail' => [
+        'from_address' => 'your_email@gmail.com',
+        'smtp' => [
+            'host' => 'smtp.gmail.com',
+            'username' => 'your_email@gmail.com',
+            'password' => 'your_gmail_app_password',
+        ],
+    ],
+];
+```
 ## If The Database Does Not Connect
 Open config/config.php and check these values:
 - database name: football_simple
@@ -81,6 +96,8 @@ URL: http://localhost/kickoff/
 
 ## Important
 The app detects the folder name automatically. Usually you do not need to edit app.base_path.
+
+
 
 
 

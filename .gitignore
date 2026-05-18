@@ -6,3 +6,4 @@ Thumbs.db
 .idea/
 node_modules/
 vendor/
+/config/config.local.php
