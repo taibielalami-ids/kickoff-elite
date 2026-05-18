@@ -39,6 +39,26 @@ You can register a new user from the Register page.
 Email sending is disabled by default so the project works without Gmail setup.
 When a login or verification code is needed, the site shows a fallback code message on the page.
 
+
+## Optional Email And Map Setup
+The project works without email or Mapbox credentials, but some features become better when you add your own credentials locally.
+
+Open this file:
+config/config.php
+
+For Mapbox maps and directions, put your Mapbox public token here:
+mapbox_token
+
+For real email delivery, fill these SMTP values:
+- from_address
+- host
+- username
+- password
+
+For Gmail, use a Gmail App Password, not your normal Gmail password.
+
+Important: do not upload your real email password or API tokens to GitHub.
+Keep them only inside your local config/config.php file.
 ## If The Database Does Not Connect
 Open config/config.php and check these values:
 - database name: football_simple
@@ -61,5 +81,6 @@ URL: http://localhost/kickoff/
 
 ## Important
 The app detects the folder name automatically. Usually you do not need to edit app.base_path.
+
 
 
