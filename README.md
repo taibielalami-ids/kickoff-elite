@@ -4,9 +4,6 @@ KickOff Elite is a PHP MVC website for 5v5 football pitch reservations.
 
 ## What You Need
 - WAMP installed
-- Apache running
-- MySQL running
-- PHP 8 or newer
 
 ## How To Download
 1. Click the green Code button on GitHub.
@@ -25,7 +22,7 @@ C:\wamp64\www\kickoff
 database/schema.sql
 
 ## Run The Site
-Open this link in the browser:
+Start WAMP, then open this link in the browser:
 http://localhost/kickoff/
 
 ## Default Admin Account
@@ -50,3 +47,4 @@ If your WAMP MySQL has a password, put it in config/config.php.
 ## Important
 Do not change app.base_path unless you also change the folder name or URL.
 For the normal setup, the folder name must be kickoff and app.base_path must stay /kickoff.
+
