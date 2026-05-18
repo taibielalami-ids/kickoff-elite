@@ -1,0 +1,6 @@
+Alias /kickoff "C:/wamp64/www/kickoff/public"
+<Directory "C:/wamp64/www/kickoff/public/">
+    Options +Indexes +FollowSymLinks +MultiViews
+    AllowOverride All
+    Require local
+</Directory>

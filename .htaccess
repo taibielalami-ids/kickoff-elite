@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/kickoff/public/
+RewriteRule ^(.*)$ public/$1 [L,QSA]
